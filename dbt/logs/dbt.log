@@ -1,0 +1,47 @@
+[0m17:45:49.473592 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d205d683020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d205b564170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d205c227b60>]}
+
+
+============================== 17:45:49.480274 | f76c14b5-8ae5-42dd-8490-ae0984e1410d ==============================
+[0m17:45:49.480274 [info ] [MainThread]: Running with dbt=1.11.7
+[0m17:45:49.480902 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'introspect': 'True', 'log_path': 'logs', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'empty': 'None', 'static_parser': 'True', 'log_cache_events': 'False', 'debug': 'False', 'target_path': 'None', 'version_check': 'True', 'no_print': 'None', 'printer_width': '80', 'log_format': 'default', 'fail_fast': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt init weather_dbt', 'profiles_dir': '/home/lebisc/.dbt', 'quiet': 'False', 'warn_error': 'None', 'write_json': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True'}
+[0m17:45:49.501047 [info ] [MainThread]: Creating dbt configuration folder at /home/lebisc/.dbt
+[0m17:45:49.506687 [debug] [MainThread]: Starter project path: /home/lebisc/perso/pipeline_meteo/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m17:45:49.522148 [info ] [MainThread]: 
+Your new dbt project "weather_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:45:49.522681 [info ] [MainThread]: Setting up your profile.
+[0m17:47:44.237704 [info ] [MainThread]: Profile weather_dbt written to /home/lebisc/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:47:44.241600 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 111.48466, "process_in_blocks": "86904", "process_kernel_time": 0.428091, "process_mem_max_rss": "103776", "process_out_blocks": "80", "process_user_time": 1.352422}
+[0m17:47:44.242211 [debug] [MainThread]: Command `dbt init` succeeded at 17:47:44.242108 after 111.49 seconds
+[0m17:47:44.242640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d205c12b5f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d205a7057c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d205b5fea80>]}
+[0m17:47:44.243187 [debug] [MainThread]: Flushing usage events
+[0m17:47:44.784894 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:59:56.681515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3e2f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa36dcb90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3b90fb0>]}
+
+
+============================== 17:59:56.685365 | 732cc2eb-9bbb-4b13-b431-458465aa60e1 ==============================
+[0m17:59:56.685365 [info ] [MainThread]: Running with dbt=1.11.7
+[0m17:59:56.686123 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'log_cache_events': 'False', 'debug': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'profiles_dir': '/home/lebisc/.dbt', 'printer_width': '80', 'target_path': 'None', 'log_path': 'logs', 'invocation_command': 'dbt run', 'empty': 'False', 'partial_parse': 'True', 'version_check': 'True', 'fail_fast': 'False', 'write_json': 'True', 'introspect': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'quiet': 'False', 'warn_error': 'None', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True'}
+[0m17:59:56.686702 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/lebisc/perso/pipeline_meteo/dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m17:59:56.687845 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.0591307, "process_in_blocks": "0", "process_kernel_time": 0.346957, "process_mem_max_rss": "99344", "process_out_blocks": "24", "process_user_time": 1.289865}
+[0m17:59:56.688439 [debug] [MainThread]: Command `dbt run` failed at 17:59:56.688337 after 0.06 seconds
+[0m17:59:56.688785 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3e2f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3effa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3effaa0>]}
+[0m17:59:56.689210 [debug] [MainThread]: Flushing usage events
+[0m17:59:57.131391 [debug] [MainThread]: An error was encountered while trying to flush usage events
