@@ -11,7 +11,7 @@ LONGITUDE = 3.87
 HOURLY = "temperature_2m"
 CITY = "Montpellier"
 
-DB_HOST = "localhost"
+DB_HOST = "weather_postgres"
 DB_PORT = 5432
 DB_NAME = "weather_db"
 DB_USER = "weather_user"
@@ -66,7 +66,11 @@ try:
     cur = conn.cursor()
 
     # On insère toutes les lignes avec une seule commande executemany
-    insert_query = "INSERT INTO weather_raw (timestamp, temperature, city) VALUES (%s, %s, %s)"
+    insert_query = """
+        INSERT INTO weather_raw (timestamp, temperature, city)
+        VALUES (%s, %s, %s)
+        ON CONFLICT (timestamp, city) DO NOTHING
+    """
     cur.executemany(insert_query, weather_rows)
 
     # Valider la transaction

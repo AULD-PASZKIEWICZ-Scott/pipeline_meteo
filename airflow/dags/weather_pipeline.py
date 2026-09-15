@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from airflow.sdk import DAG
-from airflow.providers.standard.operators.python import PythonOperator
+from airflow.providers.standard.operators.bash import BashOperator
 
 
 def hello_weather():
@@ -15,7 +15,12 @@ with DAG(
     catchup=False,
 ) as dag:
 
-    test_task = PythonOperator(
-        task_id="test_weather_pipeline",
-        python_callable=hello_weather,
+    # test_task = PythonOperator(
+    #     task_id="test_weather_pipeline",
+    #     python_callable=hello_weather,
+    # )
+
+    ingest_weather = BashOperator(
+        task_id="ingest_weather",
+        bash_command="python /opt/airflow/ingestion/fetch_weather.py",
     )
