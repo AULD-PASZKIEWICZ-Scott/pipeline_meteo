@@ -48,8 +48,9 @@ weather_rows = []
 
 for ts, temp in zip(timestamps, temperatures):
     # Convertir le timestamp en objet datetime
-    dt = datetime.fromisoformat(ts)
-    weather_rows.append((dt, temp, CITY))
+    if temp is not None:
+        dt = datetime.fromisoformat(ts)
+        weather_rows.append((dt, temp, CITY))
 
 # -------------------------------
 # 3️⃣ Insérer les données dans PostgreSQL
