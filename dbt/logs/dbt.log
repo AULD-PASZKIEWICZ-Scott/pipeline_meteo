@@ -45,3 +45,19 @@ Runtime Error
 [0m17:59:56.688785 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3e2f230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3effa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x784aa3effaa0>]}
 [0m17:59:56.689210 [debug] [MainThread]: Flushing usage events
 [0m17:59:57.131391 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:43:02.041488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba89b2ac9b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba89b2ac8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba89b2afbc0>]}
+
+
+============================== 12:43:02.047812 | 7a08920f-3483-41b3-8a80-0819a83dd872 ==============================
+[0m12:43:02.047812 [info ] [MainThread]: Running with dbt=1.11.7
+[0m12:43:02.048607 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/home/lebisc/.dbt', 'version_check': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'invocation_command': 'dbt run', 'static_parser': 'True', 'partial_parse': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'no_print': 'None', 'log_path': 'logs', 'target_path': 'None', 'log_cache_events': 'False', 'quiet': 'False', 'indirect_selection': 'eager', 'introspect': 'True', 'fail_fast': 'False', 'empty': 'False'}
+[0m12:43:02.049183 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/lebisc/perso/pipeline_meteo/dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:43:02.051317 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06743155, "process_in_blocks": "70880", "process_kernel_time": 0.459745, "process_mem_max_rss": "99332", "process_out_blocks": "8", "process_user_time": 1.387444}
+[0m12:43:02.052060 [debug] [MainThread]: Command `dbt run` failed at 12:43:02.051826 after 0.07 seconds
+[0m12:43:02.052516 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba89b13ef90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba89b6c8a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba89af2d370>]}
+[0m12:43:02.053050 [debug] [MainThread]: Flushing usage events
+[0m12:43:02.467206 [debug] [MainThread]: An error was encountered while trying to flush usage events
