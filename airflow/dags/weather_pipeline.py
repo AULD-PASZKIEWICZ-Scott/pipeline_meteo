@@ -11,7 +11,7 @@ def hello_weather():
 with DAG(
     dag_id="weather_pipeline",
     start_date=datetime(2026, 9, 15),
-    schedule=None,
+    schedule="0 6 * * *",
     catchup=False,
 ) as dag:
 
@@ -24,3 +24,21 @@ with DAG(
         task_id="ingest_weather",
         bash_command="python /opt/airflow/ingestion/fetch_weather.py",
     )
+    
+    dbt_run = BashOperator(
+        task_id="dbt_run",
+        bash_command=(
+            "cd /opt/airflow/dbt/weather_dbt && "
+            "dbt run --profiles-dir ."
+        ),
+    )
+
+    dbt_test = BashOperator(
+        task_id="dbt_test",
+        bash_command=(
+            "cd /opt/airflow/dbt/weather_dbt && "
+            "dbt test --profiles-dir ."
+        ),
+    )
+
+    ingest_weather >> dbt_run >> dbt_test

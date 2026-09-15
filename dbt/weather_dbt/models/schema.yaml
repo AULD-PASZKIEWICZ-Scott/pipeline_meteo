@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_weather_raw
+    description: "Données météo préparées à partir des données brutes."
+
+    columns:
+      - name: timestamp
+        description: "Date et heure de la mesure."
+        data_tests:
+          - not_null
+
+      - name: temperature
+        description: "Température mesurée en degrés Celsius."
+        data_tests:
+          - not_null
+
+      - name: city
+        description: "Ville associée à la mesure."
+        data_tests:
+          - not_null
+
+      - name: date
+        description: "Date de la mesure."
+        data_tests:
+          - not_null
+
+  - name: weather_daily
+    description: "Agrégation quotidienne des données météo."
+
+    columns:
+      - name: date
+        description: "Jour concerné."
+        data_tests:
+          - not_null
+
+      - name: city
+        description: "Ville concernée."
+        data_tests:
+          - not_null
+
+      - name: avg_temp
+        description: "Température moyenne de la journée."
+        data_tests:
+          - not_null
+
+      - name: min_temp
+        description: "Température minimale de la journée."
+        data_tests:
+          - not_null
+
+      - name: max_temp
+        description: "Température maximale de la journée."
+        data_tests:
+          - not_null
