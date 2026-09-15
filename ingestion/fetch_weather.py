@@ -24,6 +24,7 @@ params = {
     "latitude": LATITUDE,
     "longitude": LONGITUDE,
     "hourly": HOURLY,
+    "past_hours": 36,
 }
 
 # Appel de l'API
