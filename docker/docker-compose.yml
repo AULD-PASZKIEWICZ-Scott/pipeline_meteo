@@ -5,7 +5,7 @@ services:
     container_name: weather_postgres
     environment:
       POSTGRES_USER: weather_user
-      POSTGRES_PASSWORD: weather_pass
+      POSTGRES_PASSWORD: ${WEATHER_DB_PASSWORD}
       POSTGRES_DB: weather_db
     ports:
       - "5432:5432"
