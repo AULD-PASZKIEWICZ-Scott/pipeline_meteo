@@ -11,7 +11,7 @@ def hello_weather():
 with DAG(
     dag_id="weather_pipeline",
     start_date=datetime(2026, 9, 15),
-    schedule="12 * * *",
+    schedule="0 12 * * *",
     catchup=False,
 ) as dag:
 
