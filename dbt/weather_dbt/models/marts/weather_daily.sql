@@ -13,7 +13,7 @@ SELECT
     AVG(soil_temperature) AS avg_soil_temperature,
     MIN(soil_temperature) AS min_soil_temperature,
     MAX(soil_temperature) AS max_soil_temperature,
-    AVG(soil_moisture) AS avg_soil_moisture,
+    AVG(soil_moisture) AS avg_soil_moisture
 FROM {{ ref('stg_weather_raw') }}
 GROUP BY date, city
 ORDER BY date DESC
