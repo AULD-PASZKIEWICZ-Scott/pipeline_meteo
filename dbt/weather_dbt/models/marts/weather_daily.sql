@@ -15,8 +15,8 @@ SELECT
                 AVG(SIN(RADIANS(wind_direction))),
                 AVG(COS(RADIANS(wind_direction)))
             )
-        ) + 360,
-        360
+        ) + 360.0,
+        360.0
     ) AS avg_wind_direction,
     AVG(soil_temperature) AS avg_soil_temperature,
     MIN(soil_temperature) AS min_soil_temperature,
