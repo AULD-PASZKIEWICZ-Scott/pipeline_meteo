@@ -35,8 +35,8 @@ today = datetime.now().date()
 params = {
     "latitude": LATITUDE,
     "longitude": LONGITUDE,
-    "start_date": (today - timedelta(days=2)).isoformat(),
-    "end_date": today.isoformat(),
+    "start_date": (today - timedelta(days=3)).isoformat(),
+    "end_date": (today - timedelta(days=3)).isoformat(),
     "hourly": HOURLY,
     "timezone": "Europe/Paris",
 	"timeformat": "unixtime",

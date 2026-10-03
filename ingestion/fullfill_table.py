@@ -24,7 +24,7 @@ HOURLY = ["temperature_2m",
           "is_day"]
 CITY = "Montpellier"
 
-DB_HOST = "weather_postgres"
+DB_HOST = "localhost"
 DB_PORT = 5432
 DB_NAME = "weather_db"
 DB_USER = "weather_user"
@@ -35,7 +35,7 @@ today = datetime.now().date()
 params = {
     "latitude": LATITUDE,
     "longitude": LONGITUDE,
-    "start_date": (today - timedelta(years=5)).isoformat(),
+    "start_date": (today - timedelta(weeks=1040)).isoformat(),
     "end_date": today.isoformat(),
     "hourly": HOURLY,
     "timezone": "Europe/Paris",
