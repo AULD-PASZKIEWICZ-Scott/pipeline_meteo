@@ -9,15 +9,26 @@ SELECT
     AVG(wind_speed) AS avg_wind_speed,
     MIN(wind_speed) AS min_wind_speed,
     MAX(wind_speed) AS max_wind_speed,
-    MOD(
-        DEGREES(
+    CASE
+    WHEN DEGREES(
             ATAN2(
                 AVG(SIN(RADIANS(wind_direction))),
                 AVG(COS(RADIANS(wind_direction)))
             )
-        ) + 360.0,
-        360.0
-    ) AS avg_wind_direction,
+        ) < 0
+        THEN DEGREES(
+            ATAN2(
+                AVG(SIN(RADIANS(wind_direction))),
+                AVG(COS(RADIANS(wind_direction)))
+            )
+        ) + 360
+        ELSE DEGREES(
+            ATAN2(
+                AVG(SIN(RADIANS(wind_direction))),
+                AVG(COS(RADIANS(wind_direction)))
+            )
+        )
+    END AS avg_wind_direction,
     AVG(soil_temperature) AS avg_soil_temperature,
     MIN(soil_temperature) AS min_soil_temperature,
     MAX(soil_temperature) AS max_soil_temperature,
